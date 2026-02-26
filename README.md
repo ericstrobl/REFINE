@@ -14,3 +14,8 @@ All code was tested in R version 4.3.1.
 
 # Sample Run
 
+> data = generate_synthetic_data(N = 200, d = 10, q = 2, T = 3) # generate synthetic data with N = 200 subjects, d = 10 questionnaire items, q = 2 nuisance covariates, and T = 3 followup time points
+
+> fit  <- refine_fit(data$Y0, data$followups, z_idx = data$z_idx, ntree = 1000) # fit REFINE model
+
+> pred <- refine_predict(fit, data$Y0) # predict with REFINE model
