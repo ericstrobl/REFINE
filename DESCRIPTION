@@ -1,9 +1,9 @@
-Package: Mendelianization
+Package: REFINE
 Type: Package
-Title: Mendelianization
+Title: REFINE
 Version: 0.1.0
-Author: Eric V. Strobl
-Maintainer: Eric V. Strobl <ericvonstrobl@gmail.com>
+Author: Anonymous
+Maintainer: Anonymous <Anonymous@gmail.com>
 Description: REFINE uses follow-up–informed supervision to learn an item-aligned nonlinear stabilizer of baseline questionnaire data and then predicts future symptom vectors with an exactly linear, globally interpretable decoder.
 Depends: randomForestSRC
 License: CC BY-NC 4.0
