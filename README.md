@@ -24,13 +24,13 @@ All code was tested in R version 4.3.1.
 
 Inputs
 
-* `Y0`: numeric baseline matrix (N × p) containing questionnaire items and (optionally) nuisance covariates as columns.
+* `Y0`: numeric baseline matrix (`N × p`) containing questionnaire items and (optionally) nuisance covariates as columns.
 
 * `followups`: list of length T; each element is a list with
 
-  * `Yt`: numeric follow-up item matrix at time t (n_t × d_t)
+  * `Yt`: numeric follow-up item matrix at time `t` (`n_t × d_t`)
 
-  * `idx0`: integer vector (length n_t) mapping rows of Yt to the corresponding subject rows in Y0
+  * `idx0`: integer vector (length `n_t`) mapping rows of Yt to the corresponding subject rows in `Y0`
 
 * `z_idx` (optional): integer indices of nuisance columns in Y0 to be used as extra predictors in the nonlinear preprocessor (all other columns are treated as questionnaire items).
 
@@ -38,7 +38,7 @@ Inputs
 
 Output
 
-* A fitted model object of class refine_model containing, for each time point t, the estimated reconstruction `B_t`, intercept `a_t`, linear decoder `beta_t`, and nonlinear preprocessor `h_t`, plus metadata needed to apply the same baseline column split at prediction time.
+* A fitted model object of class refine_model containing, for each time point `t`, the estimated reconstruction `B_t`, intercept `a_t`, linear decoder `beta_t`, and nonlinear preprocessor `h_t`, plus metadata needed to apply the same baseline column split at prediction time.
 
 # refine_predict()
 
@@ -46,7 +46,7 @@ Inputs
 
 * `model`: a refine_model returned by refine_fit().
 
-* `Y0_new`: numeric baseline matrix (n × p) with the same column layout as the training Y0.
+* `Y0_new`: numeric baseline matrix (`n × p`) with the same column layout as the training `Y0`.
 
 Output
 
