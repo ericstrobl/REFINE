@@ -16,11 +16,11 @@ All code was tested in R version 4.3.1.
 
 > data = generate_synthetic_data(N = 200, d = 10, q = 2, T = 3) # generate synthetic data with N = 200 subjects, d = 10 questionnaire items, q = 2 nuisance covariates, and T = 3 followup time points
 
-> fit  <- refine_fit(data$Y0, data$followups, z_idx = data$z_idx, ntree = 1000) # fit REFINE model
+> fit  <- refine_fit(data$Y0, data$followups, z_idx = data$z_idx, ntree = 1000) # fit REFINE model, details below
 
-> pred <- refine_predict(fit, data$Y0) # predict with REFINE model
+> pred <- refine_predict(fit, data$Y0) # predict with REFINE model, details below
 
-# refine_fit() Description
+# refine_fit()
 
 Inputs
 
@@ -40,4 +40,14 @@ Output
 
 * A fitted model object of class refine_model containing, for each time point t, the estimated reconstruction `B_t`, intercept `a_t`, linear decoder `beta_t`, and nonlinear preprocessor `h_t`, plus metadata needed to apply the same baseline column split at prediction time.
 
+# refine_predict()
 
+Inputs
+
+* `model`: a refine_model returned by refine_fit().
+
+* `Y0_new`: numeric baseline matrix (n × p) with the same column layout as the training Y0.
+
+Output
+
+* A list of length `T`; element `[[t]]` is an `n × d_t` numeric matrix of predicted follow-up item values for time point `t`.
