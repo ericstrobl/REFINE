@@ -1,7 +1,7 @@
 # ==============================================================================
 # REFINE reference implementation (baseline-only inference, follow-up–informed training)
 #
-# Notation (matches the paper):
+# Notation:
 #   - Y0 : N x p baseline matrix containing questionnaire items X0 and optional nuisances Z0
 #   - X0 : baseline questionnaire items (subset of columns of Y0)
 #   - Z0 : baseline nuisance covariates (remaining columns of Y0, indexed by z_idx)
@@ -16,7 +16,7 @@
 #   - B_t (d_t x dX) linearly reconstructs X0 from Yt on the overlap subjects
 #   - a_t (length dX) is the intercept recovered via centering (means)
 #   - X0bar^(t) = a_t + Yt B_t is the follow-up–informed proxy target in the *X0 coordinate system*
-#   - h_t is a nonlinear “preprocessor” that predicts X0bar^(t) from baseline inputs (X0, Z0)
+#   - h_t is a nonlinear preprocessor that predicts X0bar^(t) from baseline inputs (X0, Z0)
 #   - beta_t is the linear decoder from stabilized baseline items to follow-up items
 #     (here estimated via an SVD pseudoinverse of B_t for numerical robustness)
 # ==============================================================================
